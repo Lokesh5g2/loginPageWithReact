@@ -29,10 +29,10 @@ const Presentation = () => {
                         <input className="input" type={visible ? "text" :
                             "password"} name="password" required=""
                             id="id_password" placeholder='**********' />
-                        <div className='eyeLogo'>
-                            {visible ? <AiOutlineEye size={20} onClick={() => setVisible(!visible)} />
+                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                            {visible ? <AiOutlineEye size={20} onClick={() => setVisible(!visible)} className="eyeLogo" />
                                 :
-                                <AiOutlineEyeInvisible size={20} onClick={() => setVisible(!visible)} />
+                                <AiOutlineEyeInvisible size={20} onClick={() => setVisible(!visible)} className="eyeLogo" />
                             }
                         </div>
                     </div>
