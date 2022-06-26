@@ -1,6 +1,8 @@
-import React from 'react'
+import { React, useState } from 'react'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import '../styles/style.css'
 const Presentation = () => {
+    const [visible, setVisible] = useState(false)
     return (
         <div>
             <div className='cards'>
@@ -12,58 +14,35 @@ const Presentation = () => {
                         <div className='logo'>
 
                         </div>
-                        <h4 style={{
-                            fontSize: "20px",
-                            fontWeight: "500",
-                            fontStyle: "normal",
-                            letterSpacing: "0px",
-                            textAlign: "left",
-                            marginBottom: '50px'
-                        }}>Flair</h4>
+                        <h4 className="h4">Flair</h4>
                     </div>
-                    <h1 style={{
-                        opacity: "1",
-                        color: "rgba(11, 14, 31, 1)",
-                        fontFamily: "Inter-SemiBold",
-                        fontSize: "50px",
-                        fontWeight: "600",
-                        fontStyle: "normal",
-                        letterSpacing: "0px",
-                        textAlign: "left",
-                        lineHeight: "56px",
-                        width: "60%"
-                    }}>Welcome Back !</h1>
-                    <p style={{
-                        opacity: "0.5",
-                        color: "rgba(11, 14, 31, 1)",
-                        fontFamily: "Inter-Regular",
-                        fontSize: "14px",
-                        fontWeight: "400",
-                        fontStyle: "normal",
-                        letterSpacing: "0px",
-                        textAlign: "left",
-                        marginBottom: '50px'
-                    }}>Please Login to your account</p>
+                    <h1 className="h1">Welcome Back !</h1>
+                    <p className='subHead'>Please Login to your account</p>
                     <div>
-                        <label for="email"><span>Email Address or User Name</span></label>
+                        <label htmlFor="email"><span>Email Address or User Name</span></label>
                         <div>
-                            <input type="email" id="email" class="input" placeholder='Please enter your mail ID' />
+                            <input type="email" id="email" className="input" placeholder='Please enter your mail ID' />
                         </div>
                     </div>
-                    <div class="password">
-                        <label for="id_password" ><span>Password</span></label>
-                        <div >
-                            <input class="input" type="password" name="password" autocomplete="current-password" required=""
-                                id="id_password" placeholder='**********' />
+                    <div className="password">
+                        <label htmlFor="id_password" ><span>Password</span></label>
+                        <input className="input" type={visible ? "text" :
+                            "password"} name="password" required=""
+                            id="id_password" placeholder='**********' />
+                        <div className='eyeLogo'>
+                            {visible ? <AiOutlineEye size={20} onClick={() => setVisible(!visible)} />
+                                :
+                                <AiOutlineEyeInvisible size={20} onClick={() => setVisible(!visible)} />
+                            }
                         </div>
                     </div>
-                    <div class="checkBox">
+                    <div className="checkBox">
                         <div>
-                            <a href="#forgot" class="forgotPass">Forgot Password?</a>
+                            <a href="#forgot" className="forgotPass">Forgot Password?</a>
                         </div>
                     </div>
                     <div>
-                        <button class="loginButton">Login</button>
+                        <button className="loginButton">Login</button>
                     </div>
                 </div>
             </div >
